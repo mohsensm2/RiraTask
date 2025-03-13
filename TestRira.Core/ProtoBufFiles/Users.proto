@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message Users {
+    string Nam= 1;
+    string LastName= 2;
+    string NationCode= 3;
+    string BirthDate= 4;
+    int32 id=5;
+
+}
+message ListOfUSer{
+    repeated Users userList=1;
+}

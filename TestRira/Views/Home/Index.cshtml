@@ -1,0 +1,184 @@
+﻿@model List<TestRira.Core.ModelViews.UserViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>ty
+
+
+    <div id="form">
+        <table>
+            <tr>
+                <td>
+                    <label>Name:</label>
+                    <input type="text" placeholder="Entet Name" id="name" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>LastName:</label>
+                    <input type="text" placeholder="Entet LastName" id="lastname" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>NationCode:</label>
+                    <input type="text" placeholder="Entet NationCode" id="nation" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>BirthDate:</label>
+                    <input type="text" placeholder="Entet BirthDate" id="birth" /> <br />
+                    <input type="hidden" id="ids" />
+                </td>
+            </tr>
+        </table>
+
+        <button class="btn btn-success" id="save" onclick="AddUser()">save</button>
+        <button class="btn btn-warning" style="display:none" id="edit" onclick="editUser()">edit</button>
+
+    </div>
+
+
+
+    <hr />
+    <table border="1" style="width:80%">
+        <tr style="border:1px solid">
+            <td>#</td>
+            <td>Name</td>
+            <td>LastName</td>
+            <td>NationCode</td>
+            <td>operations</td>
+
+        </tr>
+        @{
+            if (Model.Count() > 0)
+            {
+                var c = 0;
+                foreach (var item in Model)
+                {
+                    c++;
+                    <tr>
+                        <td>@c</td>
+                        <td>@item.Name</td>
+                        <td>@item.LastName</td>
+                        <td>@item.NationCode</td>
+                        <td>
+                            <button class="btn btn-warning" onclick="edit(@item.Id)">edit</button>
+                            <button class="btn btn-danger" onclick="deleteU(@item.Id)">delete</button>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4">NO Data</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+<script>
+    function AddUser() {
+        var name = $("#name").val();
+        var lastName = $("#lastname").val();
+        var nationCode = $("#nation").val();
+        var bitrhDate = $("#birth").val();
+        $.ajax({
+
+            url: "/home/addUser",
+            type: "Post",
+            dataType: "json",
+            data: { name: name, lastName: lastName, nation: nationCode, birth: bitrhDate },
+            success: function (res) {
+                if (res.statusCode == 0) {
+                    alert(res.statusMessage);
+                }
+                else {
+                    alert(res.statusMessage);
+                }
+                window.location.reload();
+            },
+            error: function (xhr, status, error) {
+                alert("aaa"); // مدیریت خطا
+            },
+
+        });
+    }
+    function edit(id) {
+        $.ajax({
+
+            url: "/home/getById",
+            type: "Post",
+            dataType: "json",
+            data: { id: id },
+            success: function (res) {
+                $("#name").val(res.name);
+                $("#lastname").val(res.lastName);
+                $("#nation").val(res.nation);
+                $("#birth").val(res.birth);
+                $("#ids").val(res.id);
+
+                document.getElementById('save').style.display = "none";
+                document.getElementById('edit').style.display = "inline";
+            },
+            error: function (xhr, status, error) {
+                alert("aaa"); // مدیریت خطا
+            },
+
+        });
+    }
+    function editUser() {
+        var name = $("#name").val();
+        var lastName = $("#lastname").val();
+        var nationCode = $("#nation").val();
+        var bitrhDate = $("#birth").val();
+        var id = $("#ids").val();
+        $.ajax({
+
+            url: "/home/updateUser",
+            type: "Post",
+            dataType: "json",
+            data: { name: name, lastName: lastName, nation: nationCode, birth: bitrhDate, id: id },
+            success: function (res) {
+                if (res.statusCode == 0) {
+                    alert(res.statusMessage);
+                }
+                else {
+                    alert(res.statusMessage);
+                }
+                window.location.reload();
+            },
+            error: function (xhr, status, error) {
+                alert("aaa"); // مدیریت خطا
+            },
+
+        });
+    }
+    function deleteU(id){
+        $.ajax({
+
+            url: "/home/deleteUser",
+            type: "Post",
+            dataType: "json",
+            data: { id: id },
+            success: function (res) {
+                if (res.statusCode == 0) {
+                    alert(res.statusMessage);
+                }
+                else {
+                    alert(res.statusMessage);
+                }
+                window.location.reload();
+            },
+            error: function (xhr, status, error) {
+                alert("aaa"); // مدیریت خطا
+            },
+
+        });
+    }
+</script>

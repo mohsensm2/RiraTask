@@ -1,0 +1,17 @@
+F:\Rira\TestRira\TestRira.Data\bin\Debug\net8.0\TestRira.Data.deps.json
+F:\Rira\TestRira\TestRira.Data\bin\Debug\net8.0\TestRira.Data.runtimeconfig.json
+F:\Rira\TestRira\TestRira.Data\bin\Debug\net8.0\TestRira.Data.dll
+F:\Rira\TestRira\TestRira.Data\bin\Debug\net8.0\TestRira.Data.pdb
+F:\Rira\TestRira\TestRira.Data\bin\Debug\net8.0\TestRira.Core.dll
+F:\Rira\TestRira\TestRira.Data\bin\Debug\net8.0\TestRira.Core.pdb
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\TestRira.Data.csproj.AssemblyReference.cache
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\TestRira.Data.GeneratedMSBuildEditorConfig.editorconfig
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\TestRira.Data.AssemblyInfoInputs.cache
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\TestRira.Data.AssemblyInfo.cs
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\TestRira.Data.csproj.CoreCompileInputs.cache
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\TestRira.Data.csproj.CopyComplete
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\TestRira.Data.dll
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\refint\TestRira.Data.dll
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\TestRira.Data.pdb
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\TestRira.Data.genruntimeconfig.cache
+F:\Rira\TestRira\TestRira.Data\obj\Debug\net8.0\ref\TestRira.Data.dll

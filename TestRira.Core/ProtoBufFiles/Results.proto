@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message result {
+    int32 statusCode= 1;
+    string StatusMessage= 2;
+
+}

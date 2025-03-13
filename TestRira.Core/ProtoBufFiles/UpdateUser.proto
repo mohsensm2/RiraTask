@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message updateUser {
+    string Name= 1;
+    string LastName= 2;
+    string NationCode= 3;
+    int32 id=4;
+
+
+}
